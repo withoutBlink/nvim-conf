@@ -60,7 +60,7 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
@@ -80,6 +80,12 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+
+  -- COC
+  use {'neoclide/coc.nvim', branch = 'release'} -- use COC instead of LSP
+
+  -- Autopair without cmp
+  use "jiangmiao/auto-pairs"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
