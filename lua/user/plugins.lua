@@ -93,9 +93,11 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  
+  -- TagBar
+  use "majutsushi/tagbar"
 
   -- Markdown Preview
-
    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'} 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
