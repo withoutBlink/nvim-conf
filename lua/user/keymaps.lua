@@ -1,4 +1,4 @@
-local opts = { noremap = false, silent = true }
+local opts = { noremap = true, silent = true }
 
 -- local term_opts = { silent = true }
 
