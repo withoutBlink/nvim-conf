@@ -13,7 +13,7 @@ require("lsp-setup").setup({
 		gi = 'lua vim.lsp.buf.implementation()',
 		gr = 'lua vim.lsp.buf.references()',
 		K = 'lua vim.lsp.buf.hover()',
-		F = 'lua vim.lsp.buf.formatting()',
+		F = 'lua vim.lsp.buf.format({ async: true })',
 		['<C-k>'] = 'lua vim.lsp.buf.signature_help()',
 		['<leader>d'] = 'lua vim.diagnostic.setloclist()',
 		['[d'] = 'lua vim.diagnostic.goto_prev({ border = "rounded" })',
@@ -32,15 +32,9 @@ require("lsp-setup").setup({
 		neodev = require("neodev").setup({
 			settings = {
 				Lua = {
-					library = {
-						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-						[vim.fn.stdpath("config") .. "/lua"] = true,
-					},
 					diagnostics = {
 						globals = {"vim"},
 					},
-					workspace = {
-					}
 				},
 			},
 		})
