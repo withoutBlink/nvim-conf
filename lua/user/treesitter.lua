@@ -2,7 +2,7 @@ local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then return end
 configs.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "help", "query" },
+  ensure_installed = { "c", "cpp", "lua", "vim", "help", "query" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -38,6 +38,6 @@ configs.setup {
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
   },
 }
