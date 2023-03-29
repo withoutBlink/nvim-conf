@@ -3,6 +3,16 @@ if not status_ok then
 	return
 end ]]
 --[[ handlers.setup() ]]
+local capabilities
+local org_capabilities = vim.lsp.protocol.make_client_capabilities()
+local cmp_cap_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if cmp_cap_ok then
+	capabilities = cmp_nvim_lsp.default_capabilities(org_capabilities)
+else
+	capabilities = org_capabilities
+end
+
+
 require("lsp-setup").setup({
 	default_mappings = false,
 	mappings = {
@@ -23,9 +33,9 @@ require("lsp-setup").setup({
 	on_attach = function(client, bufnr)
 		-- Support custom the on_attach function for global
 		-- Formatting on save as default
-		require("lsp-setup.utils").format_on_save(client)
+		-- require("lsp-setup.utils").format_on_save(client)
 	end,
-	capabilities = vim.lsp.protocol.make_client_capabilities(),
+	capabilities = capabilities,
 	servers = {
 		neodev = require("neodev").setup({
 			library = {
@@ -59,7 +69,7 @@ require("lsp-setup").setup({
 					},
 					diagnostics = {
 						-- Get the language server to recognize the `vim` global
-						globals = { 'vim' },
+						globals = { 'vim', 'require', 'pcall' },
 					},
 					workspace = {
 						-- Make the server aware of Neovim runtime files
@@ -72,5 +82,9 @@ require("lsp-setup").setup({
 				},
 			},
 		},
+		jdtls = {},
+		clangd = {},
+		asm_lsp = {},
+		jedi_language_server = {}
 	}
 })
