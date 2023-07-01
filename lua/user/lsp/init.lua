@@ -85,6 +85,8 @@ require("lsp-setup").setup({
 		jdtls = {},
 		clangd = {},
 		asm_lsp = {},
-		jedi_language_server = {}
+		pyright = {},
+		cmake = {},
+		bashls = {},
 	}
 })
