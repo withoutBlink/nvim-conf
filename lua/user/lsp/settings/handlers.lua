@@ -32,6 +32,7 @@ local function M(client, bufnr)
 			neodev.setup(neodev_opt)
 		end
 	end
+
 end
 
 return M
