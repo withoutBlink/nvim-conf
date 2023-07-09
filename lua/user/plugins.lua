@@ -79,7 +79,8 @@ return packer.startup(function(use)
 
 	-- LSP
 	use "neovim/nvim-lspconfig"      -- enable LSP
-	use "junnplus/lsp-setup.nvim"
+	-- Move to local customized version
+	-- use "junnplus/lsp-setup.nvim"
 	-- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 	use "williamboman/mason.nvim"    --new generation of nvim-lsp-installer
 	use "williamboman/mason-lspconfig.nvim" --new generation of nvim-lsp-installer
