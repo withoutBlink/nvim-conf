@@ -1,5 +1,5 @@
-local utils = require('toolset.lsp-setup.utils')
-local inlay_hints = require('toolset.lsp-setup.hints')
+local utils = require('toolset.lsp-conf.utils')
+local inlay_hints = require('toolset.lsp-conf.hints')
 
 local function lsp_servers(opts)
 	local servers = {}

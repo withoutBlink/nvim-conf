@@ -1,4 +1,4 @@
-local lsp_setup_ok, lsp_setup = pcall(require, "toolset.lsp-setup")
+local lsp_setup_ok, lsp_setup = pcall(require, "toolset.lsp-conf")
 if not lsp_setup_ok then
 	return
 end
