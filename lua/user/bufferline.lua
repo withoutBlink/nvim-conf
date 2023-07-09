@@ -46,7 +46,6 @@ bufferline.setup {
 			fg = { attribute = "fg", highlight = "tabline" },
 			bg = { attribute = "bg", highlight = "tabline" },
 		},
-
 		tab_selected = {
 			fg = { attribute = "fg", highlight = "tabline" },
 			bg = { attribute = "bg", highlight = "tabline" },
@@ -55,7 +54,6 @@ bufferline.setup {
 			fg = { attribute = "fg", highlight = "tabline" },
 			bg = { attribute = "bg", highlight = "tabline" },
 		},
-
 		-- not used
 		--[[ duplicate_selected = { ]]
 		--[[ 	fg = { attribute = "fg", highlight = "normal" }, ]]
