@@ -43,7 +43,6 @@ return packer.startup(function(use)
 	-- My plugins here
 	use "folke/neodev.nvim"
 	use "p00f/clangd_extensions.nvim"
-	use "junnplus/lsp-setup.nvim"
 	use "wbthomason/packer.nvim" -- Have packer manage itself
 	use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
 	use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -80,6 +79,7 @@ return packer.startup(function(use)
 
 	-- LSP
 	use "neovim/nvim-lspconfig"      -- enable LSP
+	use "junnplus/lsp-setup.nvim"
 	-- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 	use "williamboman/mason.nvim"    --new generation of nvim-lsp-installer
 	use "williamboman/mason-lspconfig.nvim" --new generation of nvim-lsp-installer
@@ -104,17 +104,6 @@ return packer.startup(function(use)
 
 	-- Markdown Preview
 	use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
-	-- install without yarn or npm
-	--[[ use({ ]]
-	--[[ 	"iamcco/markdown-preview.nvim", ]]
-	--[[ 	run = function() vim.fn["mkdp#util#install"]() end, ]]
-	--[[ }) ]]
-	--[[ use({ ]]
-	--[[ 	"iamcco/markdown-preview.nvim", ]]
-	--[[ 	run = "cd app && npm install", ]]
-	--[[ 	setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ]]
-	--[[ 	ft = { "markdown" }, ]]
-	--[[ }) ]]
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
