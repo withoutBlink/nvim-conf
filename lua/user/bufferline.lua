@@ -37,29 +37,13 @@ bufferline.setup {
 		tab_size = 21,
 		diagnostics = false, -- | "nvim_lsp" | "coc",
 		diagnostics_update_in_insert = false,
-		-- diagnostics_indicator = function(count, level, diagnostics_dict, context)
-		--   return "("..count..")"
-		-- end,
-		-- NOTE: this will be called a lot so don't do any heavy processing here
-		-- custom_filter = function(buf_number)
-		--   -- filter out filetypes you don't want to see
-		--   if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
-		--     return true
-		--   end
-		--   -- filter out by buffer name
-		--   if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
-		--     return true
-		--   end
-		--   -- filter out based on arbitrary rules
-		--   -- e.g. filter out vim wiki buffer from tabline in your work repo
-		--   if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
-		--     return true
-		--   end
-		-- end,
+		diagnostics_indicator = function(count, level, diagnostics_dict, context)
+			return "(" .. count .. ")"
+		end,
 		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
 		show_buffer_icons = true,
-		show_buffer_close_icons = true,
-		show_close_icon = true,
+		show_buffer_close_icons = false,
+		show_close_icon = false,
 		show_tab_indicators = true,
 		persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
 		-- can also be a table containing 2 custom separators
@@ -73,95 +57,80 @@ bufferline.setup {
 		-- end
 	},
 	highlights = {
-		fill = {
-			fg = { attribute = "fg", highlight = "#ff0000" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		background = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
+		-- perfect default fill and background
+		--[[ fill = { ]]
+		--[[ 	fg = { attribute = "fg", highlight = "tabline" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ }, ]]
+		--[[ background = { ]]
+		--[[ 	fg = { attribute = "fg", highlight = "dark" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ }, ]]
 
-		-- buffer_selected = {
-		--   guifg = {attribute='fg',highlight='#ff0000'},
-		--   guibg = {attribute='bg',highlight='#0000ff'},
-		--   gui = 'none'
-		--   },
+		buffer_selected = {
+			fg = { attribute = "fg", highlight = "tabline" },
+			bg = { attribute = "bg", highlight = "tabline" },
+		},
 		buffer_visible = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
+			fg = { attribute = "fg", highlight = "tabline" },
+			bg = { attribute = "bg", highlight = "tabline" },
 		},
-
-		close_button = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		close_button_visible = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		-- close_button_selected = {
-		--   guifg = {attribute='fg',highlight='TabLineSel'},
-		--   guibg ={attribute='bg',highlight='TabLineSel'}
-		--   },
-
 		tab_selected = {
-			fg = { attribute = "fg", highlight = "Normal" },
-			bg = { attribute = "bg", highlight = "Normal" },
+			fg = { attribute = "fg", highlight = "tabline" },
+			bg = { attribute = "bg", highlight = "tabline" },
 		},
 		tab = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
+			fg = { attribute = "fg", highlight = "tabline" },
+			bg = { attribute = "bg", highlight = "tabline" },
 		},
-		tab_close = {
-			-- guifg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
-			fg = { attribute = "fg", highlight = "TabLineSel" },
-			bg = { attribute = "bg", highlight = "Normal" },
-		},
+		-- not used
+		--[[ duplicate_selected = { ]]
+		--[[ 	fg = { attribute = "fg", highlight = "normal" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "normal" }, ]]
+		--[[ 	italic = true, ]]
+		--[[ }, ]]
+		--[[ duplicate_visible = { ]]
+		--[[ 	fg = { attribute = "fg", highlight = "tabline" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ 	italic = true, ]]
+		--[[ }, ]]
+		--[[ duplicate = { ]]
+		--[[ 	fg = { attribute = "fg", highlight = "tabline" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ 	italic = true, ]]
+		--[[ }, ]]
 
-		duplicate_selected = {
-			fg = { attribute = "fg", highlight = "TabLineSel" },
-			bg = { attribute = "bg", highlight = "TabLineSel" },
-			italic = true,
-		},
-		duplicate_visible = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-			italic = true,
-		},
-		duplicate = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-			italic = true,
-		},
+		-- simple color in selected
+		--[[ modified = { ]]
+		--[[ 	fg = { attribute = "fg", highlight = "tabline" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ }, ]]
+		--[[ modified_selected = { ]]
+		--[[ 	fg = { attribute = "fg", highlight = "normal" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "normal" }, ]]
+		--[[ }, ]]
+		--[[ modified_visible = { ]]
+		--[[ 	fg = { attribute = "fg", highlight = "tabline" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ }, ]]
 
-		modified = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		modified_selected = {
-			fg = { attribute = "fg", highlight = "Normal" },
-			bg = { attribute = "bg", highlight = "Normal" },
-		},
-		modified_visible = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		separator = {
-			fg = { attribute = "bg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		separator_selected = {
-			fg = { attribute = "bg", highlight = "Normal" },
-			bg = { attribute = "bg", highlight = "Normal" },
-		},
-		-- separator_visible = {
-		--   guifg = {attribute='bg',highlight='TabLine'},
-		--   guibg = {attribute='bg',highlight='TabLine'}
-		--   },
+		-- perfect separator color
+		--[[ separator = { ]]
+		--[[ 	fg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ }, ]]
+		--[[ separator_selected = { ]]
+		--[[ 	fg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ 	bg = { attribute = "bg", highlight = "tabline" }, ]]
+		--[[ }, ]]
+		--[[ separator_visible = { ]]
+		--[[ 	fg = { attribute = 'bg', highlight = 'tabline' }, ]]
+		--[[ 	bg = { attribute = 'bg', highlight = 'tabline' } ]]
+		--[[ }, ]]
+
 		indicator_selected = {
-			fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
-			bg = { attribute = "bg", highlight = "Normal" },
+			fg = { attribute = "fg", highlight = "lspdiagnosticsdefaulthint" },
+			bg = { attribute = "bg", highlight = "tabline" },
 		},
 	},
 }

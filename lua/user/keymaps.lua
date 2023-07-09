@@ -35,11 +35,12 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "L", ":bnext<CR>", opts)
 keymap("n", "H", ":bprevious<CR>", opts)
 
-
 -- Undo and Redo
 keymap("n", "u", ":undo<CR>", opts)
 keymap("n", "U", ":redo<CR>", opts)
 
+-- Quick command
+keymap("n", ";", ":", opts)
 -- Move text up and down
 -- keymap("n", "<A-k>", ":m .-2<CR>==gi", opts)
 -- keymap("n", "<A-j>", ":m .+1<CR>==gi", opts)
@@ -49,10 +50,15 @@ keymap("n", "U", ":redo<CR>", opts)
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
+
+-- Visual --
+-- Quick command
+keymap("v", ";", ":", opts)
+
+-- Press jk fast to enter normal mode
 keymap("v", "jk", "<ESC>", opts)
 keymap("v", "kj", "<ESC>", opts)
 
--- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -75,4 +81,3 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
