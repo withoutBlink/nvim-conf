@@ -1,4 +1,3 @@
-
 local M = {
 	gD = 'lua vim.lsp.buf.declaration()',
 	gd = 'lua vim.lsp.buf.definition()',
