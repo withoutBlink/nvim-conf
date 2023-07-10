@@ -1,3 +1,8 @@
+local lsp_setup_ok, lsp_setup = pcall(require, "toolset.lsp-conf")
+if not lsp_setup_ok then
+	return
+end
+
 local keymapping_ok, keymapping = pcall(require, "user.lsp.settings.lsp-key")
 if not keymapping_ok then
 	return
@@ -22,7 +27,7 @@ if not lua_ls_opt_ok then
 	return
 end
 
-require("lsp-setup").setup({
+lsp_setup.setup({
 	default_mappings = false,
 	mappings = keymapping,
 	on_attach = on_attach_cb,
