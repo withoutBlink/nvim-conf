@@ -13,6 +13,11 @@ if not on_attach_cb_ok then
 	return
 end
 
+local lua_ls_opt_ok, lua_ls_opt = pcall(require, "user.lsp.settings.lua-ls")
+if not lua_ls_opt_ok then
+	return
+end
+
 local capabilities
 local org_capabilities = vim.lsp.protocol.make_client_capabilities()
 local cmp_cap_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -22,10 +27,6 @@ else
 	capabilities = org_capabilities
 end
 
-local lua_ls_opt_ok, lua_ls_opt = pcall(require, "user.lsp.settings.lua-ls")
-if not lua_ls_opt_ok then
-	return
-end
 
 lsp_setup.setup({
 	default_mappings = false,
@@ -37,7 +38,6 @@ lsp_setup.setup({
 		jdtls = {},
 		clangd = {},
 		asm_lsp = {},
-		pyright = {},
 		cmake = {},
 		bashls = {},
 	}
