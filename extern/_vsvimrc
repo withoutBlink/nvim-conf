@@ -29,6 +29,7 @@ nnoremap <C-p> :vsc vassistx.refresultsprevious<CR>
 nnoremap <Space>F :vsc vassistx.findsymboldialog<CR>
 nnoremap <Space>f :vsc vassistx.openfileinsolutiondialog<CR>
 nnoremap <Space>r :vsc vassistx.refactorrename<CR>
+nnoremap <Space>e :vsc view.solutionexplorer<CR>:vsc solutionexplorer.syncwithactivedocument<CR>
 nnoremap U :vsc edit.redo<CR>
 nnoremap u :vsc edit.undo<CR>
 nnoremap K :vsc edit.quickinfo<CR>
