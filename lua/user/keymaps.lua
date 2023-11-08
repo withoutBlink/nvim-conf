@@ -10,6 +10,10 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- unbind c for unwanted change
+keymap("n", "c", "<Esc>", opts)
+keymap("v", "c", "<Esc>", opts)
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -40,7 +44,7 @@ keymap("n", "u", ":undo<CR>", opts)
 keymap("n", "U", ":redo<CR>", opts)
 
 -- Quick command
-keymap("n", ";", ":", opts)
+-- keymap("n", ";", ":", opts)
 -- Move text up and down
 -- keymap("n", "<A-k>", ":m .-2<CR>==gi", opts)
 -- keymap("n", "<A-j>", ":m .+1<CR>==gi", opts)
@@ -53,7 +57,7 @@ keymap("i", "kj", "<ESC>", opts)
 
 -- Visual --
 -- Quick command
-keymap("v", ";", ":", opts)
+-- keymap("v", ";", ":", opts)
 
 -- Press jk fast to enter normal mode
 keymap("v", "jk", "<ESC>", opts)
