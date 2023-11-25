@@ -38,5 +38,6 @@ lsp_setup.setup({
 		cmake = {},
 		bashls = {},
 		pyright = {},
+		clangd = {},
 	}
 })
