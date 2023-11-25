@@ -44,3 +44,4 @@ plugin/packer_compiled.lua
 *tmux-themepack*
 
 .DS_Store
+.clang-format

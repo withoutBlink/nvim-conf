@@ -35,9 +35,6 @@ lsp_setup.setup({
 	capabilities = capabilities,
 	servers = {
 		lua_ls = lua_ls_opt,
-		jdtls = {},
-		clangd = {},
-		asm_lsp = {},
 		cmake = {},
 		bashls = {},
 		pyright = {},
