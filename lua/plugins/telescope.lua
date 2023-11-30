@@ -7,7 +7,7 @@ local telescope_keymaps = {
     desc = "Find Files",
     nowait = true,
   },
-	--TODO: limit search scope
+	-- TODO: limit search scope
 	{
 		"<leader>F",
 		"<cmd>Telescope live_grep<CR>",

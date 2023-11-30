@@ -3,7 +3,7 @@ local Util = require("lazyvim.util")
 -- global keymaps for neo-tree
 local neotree_keymaps = function()
 	return {
-		--TODO: e for left current folder, E for full-screen project folder
+		-- TODO: e for left current folder, E for full-screen project folder
 		{
 			"<leader>e",
 			function()
