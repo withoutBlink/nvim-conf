@@ -21,6 +21,9 @@ end
 -- Delete key bindings, by binding it to Nop, and forbid for remap
 keymap.set({ "n", "v" }, "c", "<Nop>", default_opts)
 
+-- Remove default K keymaps
+keymap.set({ "n", "v" }, "F", "<Nop>", default_opts)
+
 -- Terminal key binding
 -- TODO: add terminal key bindings to <leader>t and <leader>T
 
