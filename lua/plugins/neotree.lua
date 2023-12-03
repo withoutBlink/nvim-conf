@@ -41,9 +41,6 @@ local neotree_config = function()
 				["R"] = {
 					command = "refresh",
 				},
-				["<CR>"] = {
-					command = "set_root",
-				}
 			},
 		},
 		filesystem = {
