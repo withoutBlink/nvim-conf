@@ -1,20 +1,22 @@
-local Util = require("lazyvim.util")
+local util = require("lazyvim.util")
+
+-- get current project folder during loading
+local project_pwd = util.root()
 
 -- global keymaps for neo-tree
 local neotree_keymaps = function()
 	return {
-		-- TODO: e for left current folder, E for full-screen project folder
 		{
 			"<leader>e",
 			function()
-				require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), reveal_force_cwd = true })
+				require("neo-tree.command").execute({ toggle = true, dir = vim.fn.expand("%:p:h") })
 			end,
 			desc = "Explorer(left)",
 		},
 		{
 			"<leader>E",
 			function()
-				require("neo-tree.command").execute({ toggle = true, dir = Util.root(), position = "current" })
+				require("neo-tree.command").execute({ toggle = true, dir = project_pwd, position = "current" })
 			end,
 			desc = "Explorer(full)",
 		},
@@ -39,6 +41,9 @@ local neotree_config = function()
 				["R"] = {
 					command = "refresh",
 				},
+				["<CR>"] = {
+					command = "set_root",
+				}
 			},
 		},
 		filesystem = {
