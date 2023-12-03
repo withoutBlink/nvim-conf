@@ -7,7 +7,7 @@ local project_pwd = util.root()
 local telescope_keymaps = {
 	{
 		"<leader>f",
-		function ()
+		function()
 			builtin.find_files({ cwd = project_pwd })
 		end,
 		desc = "Find Files",
@@ -15,7 +15,7 @@ local telescope_keymaps = {
 	},
 	{
 		"<leader>F",
-		function ()
+		function()
 			builtin.live_grep({ cwd = project_pwd })
 		end,
 		desc = "Find Symbol",
@@ -23,7 +23,7 @@ local telescope_keymaps = {
 	},
 	{
 		"<leader>S",
-		function ()
+		function()
 			builtin.grep_string({ cwd = project_pwd })
 		end,
 		desc = "Symbol Under Cursor",
