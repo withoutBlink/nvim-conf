@@ -1,4 +1,4 @@
-local lspkeys = {
+local lsp_keymaps = {
 	{
 		"gd",
 		function()
@@ -64,13 +64,13 @@ local M = {
 		init = function ()
 			--disable default keys here
 			local default_keys = require("lazyvim.plugins.lsp.keymaps").get()
-			default_keys[#default_keys+1] = { "<leader>ca", false }
-			default_keys[#default_keys+1] = { "<leader>cA", false }
-			default_keys[#default_keys+1] = { "<leader>cl", false }
-			default_keys[#default_keys+1] = { "<leader>cr", false }
+			default_keys[#default_keys+1] = { "<leader>ca", mode = {"n", "v"}, false }
+			default_keys[#default_keys+1] = { "<leader>cA", mode = {"n", "v"}, false }
+			default_keys[#default_keys+1] = { "<leader>cl", mode = {"n", "v"}, false }
+			default_keys[#default_keys+1] = { "<leader>cr", mode = {"n", "v"}, false }
 		end,
 		keys = function()
-			return lspkeys
+			return lsp_keymaps
 		end,
 	},
 	{
