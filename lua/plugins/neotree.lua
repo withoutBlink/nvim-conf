@@ -54,9 +54,11 @@ local neotree_config = function()
 end
 
 local M = {
-	"neo-tree.nvim",
-	keys = neotree_keymaps,
-	config = neotree_config,
+	{
+		"neo-tree.nvim",
+		keys = neotree_keymaps,
+		config = neotree_config,
+	},
 }
 
 return M
