@@ -1,7 +1,7 @@
 local M = {
 	{
 		"civitasv/cmake-tools.nvim",
-		enabled = false,
+		enabled = true,
 	}
 }
 
