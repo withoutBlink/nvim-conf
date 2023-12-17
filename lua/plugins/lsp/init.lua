@@ -28,7 +28,7 @@ local lsp_keymaps = {
 		function()
 			require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
 		end,
-		desc = "Goto T[y]pe Definition"
+		desc = "Goto T[y]pe Definition",
 	},
 	{
 		"gK",
@@ -61,13 +61,13 @@ local lsp_keymaps = {
 local M = {
 	{
 		"neovim/nvim-lspconfig",
-		init = function ()
+		init = function()
 			--disable default keys here
 			local default_keys = require("lazyvim.plugins.lsp.keymaps").get()
-			default_keys[#default_keys+1] = { "<leader>ca", mode = {"n", "v"}, false }
-			default_keys[#default_keys+1] = { "<leader>cA", mode = {"n", "v"}, false }
-			default_keys[#default_keys+1] = { "<leader>cl", mode = {"n", "v"}, false }
-			default_keys[#default_keys+1] = { "<leader>cr", mode = {"n", "v"}, false }
+			default_keys[#default_keys + 1] = { "<leader>ca", mode = { "n", "v" }, false }
+			default_keys[#default_keys + 1] = { "<leader>cA", mode = { "n", "v" }, false }
+			default_keys[#default_keys + 1] = { "<leader>cl", mode = { "n", "v" }, false }
+			default_keys[#default_keys + 1] = { "<leader>cr", mode = { "n", "v" }, false }
 		end,
 		keys = function()
 			return lsp_keymaps
@@ -75,6 +75,7 @@ local M = {
 	},
 	{
 		"williamboman/mason.nvim",
+		depends = "neovim/nvim-lspconfig",
 		keys = function()
 			return {}
 		end,
