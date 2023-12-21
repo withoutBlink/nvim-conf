@@ -18,6 +18,8 @@ because it will ignore case when searching for a capital letter
 vim.opt.smartcase = true
 vim.opt.ignorecase = false
 
+vim.opt.hlsearch = true
+
 --Set vim to ignore mouse event
 vim.opt.mouse = ""
 
