@@ -1,9 +1,7 @@
 local M = {
 	{
 		"persistence.nvim",
-		keys = function()
-			return {}
-		end,
+		enabled = false,
 	},
 }
 
