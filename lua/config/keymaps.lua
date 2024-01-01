@@ -63,8 +63,8 @@ keymap.set("n", "<leader>h", ":noh<CR>", opts_set_desc(default_opts, "Disable Hi
 -- Save buffer
 keymap.set("n", "<leader>w", ":w<CR>", opts_set_desc(default_opts, "Save Buffer"))
 
--- Close buffer
-keymap.set("n", "<leader>c", ":bd<CR>", opts_set_desc(default_opts, "Close Buffer"))
+-- Close buffer(using mini buffer remove)
+-- keymap.set("n", "<leader>c", ":bd<CR>", opts_set_desc(default_opts, "Close Buffer"))
 
 -- Quit
 keymap.set("n", "<leader>q", ":q<CR>", opts_set_desc(default_opts, "Quit Window"))
