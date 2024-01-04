@@ -2,6 +2,7 @@
 local M = {
 	{
 		"akinsho/bufferline.nvim",
+		enabled = false,
 		keys = function()
 			return {}
 		end,
