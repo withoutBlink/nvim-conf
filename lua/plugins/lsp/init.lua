@@ -72,6 +72,14 @@ local M = {
 		keys = function()
 			return lsp_keymaps
 		end,
+		opts = {
+			setup = {
+				clangd = function(_, opts)
+					-- fix calngd offset encoding
+					opts.capabilities.offsetEncoding = { "utf-16" }
+				end,
+			},
+		},
 	},
 	{
 		"williamboman/mason.nvim",
