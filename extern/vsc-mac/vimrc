@@ -56,7 +56,7 @@ nnoremap <C-L> <C-W>l
 nnoremap <Space>w :w<CR>
 nnoremap <Space>c :q<CR>
 nnoremap <Space>h :noh<CR>
-nnoremap <Space>F :vsc workbench.action.gotoSymbol<CR>
+nnoremap <Space>F :vsc workbench.action.showAllSymbols<CR>
 nnoremap <Space>f :vsc workbench.action.quickOpen<CR>
 nnoremap <Space>e :vsc workbench.view.explorer<CR>
 nnoremap <Space>t :vsc workbench.action.focusAuxiliaryBar<CR>
