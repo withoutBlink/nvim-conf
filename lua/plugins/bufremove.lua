@@ -27,8 +27,8 @@ local M = {
 		{
 			"<leader>C",
 			function()
+				require("trouble").close()
 				require("mini.bufremove").delete(0, true)
-				require("troble").close()
 			end,
 			desc = "Delete Buffer (Force)",
 		},
