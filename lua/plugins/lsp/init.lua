@@ -8,7 +8,9 @@ local lsp_keymaps = {
 	},
 	{
 		"gr",
-		"<cmd>Telescope lsp_references<cr>",
+		function ()
+			require("telescope.builtin").lsp_references({ reuse_win = true })
+		end,
 		desc = "References",
 	},
 	{
@@ -31,11 +33,6 @@ local lsp_keymaps = {
 		desc = "Goto T[y]pe Definition",
 	},
 	{
-		"gK",
-		vim.lsp.buf.signature_help,
-		desc = "Signature Help",
-	},
-	{
 		"gh",
 		"<cmd>ClangdSwitchSourceHeader<cr>",
 		desc = "Switch Header/Source",
@@ -48,7 +45,6 @@ local lsp_keymaps = {
 	{
 		"<c-k>",
 		vim.lsp.buf.signature_help,
-		mode = "i",
 		desc = "Signature Help",
 	},
 	{
@@ -61,6 +57,7 @@ local lsp_keymaps = {
 local M = {
 	{
 		"neovim/nvim-lspconfig",
+		depends = "nvim-telescope/telescope.nvim",
 		init = function()
 			--disable default keys here
 			local default_keys = require("lazyvim.plugins.lsp.keymaps").get()
@@ -77,6 +74,7 @@ local M = {
 				clangd = function(_, opts)
 					-- fix calngd offset encoding
 					opts.capabilities.offsetEncoding = { "utf-16" }
+					opts.keys[#opts.keys + 1] = { "<leader>cR", mode = { "n", "v" }, false }
 				end,
 			},
 		},
