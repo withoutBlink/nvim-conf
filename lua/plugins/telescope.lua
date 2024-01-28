@@ -76,17 +76,37 @@ local telescope_keymaps = {
 	},
 }
 
+local telescope_opts = {
+	defaults = {
+		layout_strategy = "horizontal",
+		layout_config = { prompt_position = "top" },
+		sorting_strategy = "ascending",
+		winblend = 0,
+		mappings = {
+			['n'] = {
+				['<c-f>'] = function (prompt_bufnr)
+					require("telescope.actions").preview_scrolling_down(prompt_bufnr)
+				end,
+				['<c-b>'] = function (prompt_bufnr)
+					require("telescope.actions").preview_scrolling_up(prompt_bufnr)
+				end
+			},
+			['i'] = {
+				['<c-f>'] = function (prompt_bufnr)
+					require("telescope.actions").preview_scrolling_down(prompt_bufnr)
+				end,
+				['<c-b>'] = function (prompt_bufnr)
+					require("telescope.actions").preview_scrolling_up(prompt_bufnr)
+				end
+			},
+		},
+	},
+}
+
 local M = {
 	{
 		"nvim-telescope/telescope.nvim",
-		opts = {
-			defaults = {
-				layout_strategy = "horizontal",
-				layout_config = { prompt_position = "top" },
-				sorting_strategy = "ascending",
-				winblend = 0,
-			},
-		},
+		opts = telescope_opts,
 		keys = function()
 			return telescope_keymaps
 		end,
