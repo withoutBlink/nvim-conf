@@ -8,7 +8,7 @@ local lsp_keymaps = {
 	},
 	{
 		"gr",
-		function ()
+		function()
 			require("telescope.builtin").lsp_references({ reuse_win = true })
 		end,
 		desc = "References",
@@ -31,11 +31,6 @@ local lsp_keymaps = {
 			require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
 		end,
 		desc = "Goto T[y]pe Definition",
-	},
-	{
-		"gh",
-		"<cmd>ClangdSwitchSourceHeader<cr>",
-		desc = "Switch Header/Source",
 	},
 	{
 		"K",
@@ -72,9 +67,16 @@ local M = {
 		opts = {
 			setup = {
 				clangd = function(_, opts)
-					-- fix calngd offset encoding
-					opts.capabilities.offsetEncoding = { "utf-16" }
-					opts.keys[#opts.keys + 1] = { "<leader>cR", mode = { "n", "v" }, false }
+					-- HACK: replace default keybindings with custom ones
+					opts.keys[#opts.keys + 1] = {
+						"<leader>cR",
+						false,
+					}
+					opts.keys[#opts.keys + 1] = {
+						"gh",
+						"<cmd>ClangdSwitchSourceHeader<cr>",
+						desc = "Switch Header/Source",
+					}
 				end,
 			},
 		},
