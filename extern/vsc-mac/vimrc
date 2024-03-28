@@ -33,8 +33,8 @@ nnoremap U :redo<CR>
 nnoremap gt :vsc editor.action.goToTypeDefinition<CR>
 nnoremap gd :vsc editor.action.revealDefinition<CR>
 nnoremap gD :vsc editor.action.goToDeclaration<CR>
-nnoremap gr :vsc editor.action.goToRefernces<CR>
-nnoremap gc :vsc editor.action.blockComment<CR>
+nnoremap gr :vsc editor.action.goToReferences<CR>
+nnoremap gc :vsc editor.action.commentLine<CR>
 nnoremap gh :vsc clangd.switchheadersource<CR>
 " gg spped up
 nnoremap gg gg
