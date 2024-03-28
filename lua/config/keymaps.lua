@@ -3,8 +3,8 @@
 -- Add any additional keymaps here
 
 --Remap space as leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = ";"
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = ";"
 
 -- Shorten function name
 local keymap = vim.keymap
