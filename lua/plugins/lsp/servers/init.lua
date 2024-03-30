@@ -4,8 +4,6 @@ local M = {
 	clangd = clangd_config,
 	pyright = {},
 	lua_ls = {},
-    shfmt = {},
-    stylua = {},
 }
 
 return M
