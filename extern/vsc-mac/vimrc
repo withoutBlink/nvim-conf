@@ -1,0 +1,75 @@
+" vimrc file for vscode only
+
+" highlight matched
+set hlsearch
+" case insensitive search
+set ignorecase
+set smartcase
+" search while typing
+set incsearch
+" wrap-around when searching
+set wrapscan
+" show pressed keys in lower right corner
+set showcmd
+" tab -> spaces
+" set expandtab
+set tabstop=8
+set shiftwidth=8
+" keep a 5 line buffer for the cursor from top/bottom of window
+set scrolloff=5
+" X11 clipboard
+set clipboard=unnamed
+" use ~ with movement
+set tildeop
+
+" mappings
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+nnoremap ; :
+nnoremap u :undo<CR>
+nnoremap U :redo<CR>
+
+nnoremap gt :vsc editor.action.goToTypeDefinition<CR>
+nnoremap gd :vsc editor.action.revealDefinition<CR>
+nnoremap gD :vsc editor.action.goToDeclaration<CR>
+nnoremap gr :vsc editor.action.goToReferences<CR>
+nnoremap gc :vsc editor.action.commentLine<CR>
+nnoremap gh :vsc clangd.switchheadersource<CR>
+" gg spped up
+nnoremap gg gg
+
+" builtin next and previous command 'cN' and 'cn'
+nnoremap <Space>d :vsc workbench.actions.view.problems<CR>
+nnoremap [d :vsc editor.action.marker.prev<CR>
+nnoremap ]d :vsc editor.action.marker.next<CR>
+
+nnoremap <S-L> :tabn<CR>
+nnoremap <S-H> :tabp<CR>
+nnoremap <S-K> :vsc editor.action.showHover<CR>
+
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+
+nnoremap <Space>w :w<CR>
+nnoremap <Space>c :q<CR>
+nnoremap <Space>h :noh<CR>
+nnoremap <Space>F :vsc workbench.action.showAllSymbols<CR>
+nnoremap <Space>f :vsc workbench.action.quickOpen<CR>
+nnoremap <Space>e :vsc workbench.view.explorer<CR>
+nnoremap <Space>t :vsc workbench.action.focusAuxiliaryBar<CR>
+nnoremap <Space>r :vsc editor.action.rename<CR>
+nnoremap <Space>v :vsc workbench.action.moveEditorToNextGroup<CR>
+nnoremap <Space>V :vsc workbench.action.moveEditorToPreviousGroup<CR>
+
+" reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+vnoremap F :vsc editor.action.formatSelection<CR>
+vnoremap gc :vsc editor.action.blockComment<CR>
+
+" MOVE LINE/BLOCK
+vnoremap <S-J> :m'>+<CR>gv
+vnoremap <S-K> :m'<-2<CR>gv
