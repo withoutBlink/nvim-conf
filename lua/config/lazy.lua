@@ -23,7 +23,7 @@ require("lazy").setup({
 			},
 		},
 		-- import any extras modules here
-		{ import = "lazyvim.plugins.extras.lang.clangd" },
+		-- { import = "lazyvim.plugins.extras.lang.clangd" },
 		{ import = "lazyvim.plugins.extras.coding.copilot" },
 		-- { import = "lazyvim.plugins.extras.lang.typescript" },
 		-- { import = "lazyvim.plugins.extras.lang.json" },
