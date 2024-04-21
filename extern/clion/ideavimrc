@@ -1,0 +1,70 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+" Map customized shortcut
+let mapleader=" "
+
+inoremap jk <esc>
+inoremap kj <esc>
+
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q!<cr>
+nnoremap <leader>c :bd<cr>
+nnoremap <leader>C :bd!<cr>
+nnoremap <leader>h :noh<cr>
+
+nnoremap <c-l> <c-w>l
+nnoremap <c-k> <c-w>k
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+
+nnoremap L :bn<cr>
+nnoremap H :bp<cr>
+nnoremap U :redo<cr>
+nnoremap u :undo<cr>
+
+vnoremap J :m'>+1<CR>gv
+vnoremap K :m'<-2<CR>gv
+vnoremap > >gv
+vnoremap < <gv
+
+map <leader>0 <Action>(ToggleCompactMode)
+map <leader>f <Action>(SearchEverywhere)
+map gh <Action>(SwitchHeaderSource)
+map gr <Action>(ShowUsages)
+
+" Share clipboard with system
+set clipboard=unnamed
+set clipboard^=ideaput
