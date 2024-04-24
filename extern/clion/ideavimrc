@@ -62,8 +62,12 @@ vnoremap < <gv
 
 map <leader>0 <Action>(ToggleCompactMode)
 map <leader>f <Action>(SearchEverywhere)
+map <leader>v <Action>(OpenEditorInOppositeTabGroup)
+map <leader>r <Action>(RenameElement)
+
 map gh <Action>(SwitchHeaderSource)
 map gr <Action>(ShowUsages)
+map gd <Action>(GoToDeclaration)
 
 " Share clipboard with system
 set clipboard=unnamed
