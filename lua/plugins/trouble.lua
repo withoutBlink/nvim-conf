@@ -5,19 +5,20 @@ local M = {
 		keys = {
 			{
 				"<leader>d",
-				function()
-					require("trouble").toggle("document_diagnostics")
-				end,
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 				desc = "Document Diag",
 				nowait = true,
 			},
 			{
 				"<leader>D",
-				function()
-					require("trouble").toggle("workspace_diagnostics")
-				end,
+				"<cmd>Trouble diagnostics toggle<cr>",
 				desc = "Project Diag",
 				nowait = true,
+			},
+			{
+				"<leader>t",
+				"<cmd>Trouble symbols toggle focus=true win.size=45<cr>",
+				desc = "Symbols (Trouble)",
 			},
 		},
 	},

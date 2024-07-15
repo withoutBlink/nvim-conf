@@ -23,4 +23,6 @@ vim.opt.hlsearch = true
 --Set vim to ignore mouse event
 vim.opt.mouse = ""
 
+vim.g.lazyvim_picker = "telescope"
+
 -- TODO: Set vim to notice _ and uppercase as word
