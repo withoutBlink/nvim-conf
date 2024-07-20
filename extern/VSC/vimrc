@@ -3,7 +3,6 @@
 " highlight matched
 set hlsearch
 " case insensitive search
-set ignorecase
 set smartcase
 " search while typing
 set incsearch
@@ -33,9 +32,10 @@ nnoremap U :redo<CR>
 nnoremap gt :vsc editor.action.goToTypeDefinition<CR>
 nnoremap gd :vsc editor.action.revealDefinition<CR>
 nnoremap gD :vsc editor.action.goToDeclaration<CR>
-nnoremap gr :vsc editor.action.goToReferences<CR>
-nnoremap gc :vsc editor.action.commentLine<CR>
+nnoremap gr :vsc editor.action.goToRefernces<CR>
 nnoremap gh :vsc clangd.switchheadersource<CR>
+nnoremap gc :vsc editor.action.blockComment<CR>
+
 " gg spped up
 nnoremap gg gg
 
@@ -47,19 +47,17 @@ nnoremap ]d :vsc editor.action.marker.next<CR>
 nnoremap <S-L> :tabn<CR>
 nnoremap <S-H> :tabp<CR>
 nnoremap <S-K> :vsc editor.action.showHover<CR>
-
-nnoremap <C-H> <C-W>h
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
+nnoremap <C-H> :vsc workbench.action.navigateLeft<CR>
+nnoremap <C-L> :vsc workbench.action.navigateRight<CR>
 
 nnoremap <Space>w :w<CR>
 nnoremap <Space>c :q<CR>
 nnoremap <Space>h :noh<CR>
-nnoremap <Space>F :vsc workbench.action.showAllSymbols<CR>
+nnoremap <Space>F :vsc workbench.action.gotoSymbol<CR>
 nnoremap <Space>f :vsc workbench.action.quickOpen<CR>
-nnoremap <Space>e :vsc workbench.view.explorer<CR>
-nnoremap <Space>t :vsc workbench.action.focusAuxiliaryBar<CR>
+nnoremap <Space>e :vsc workbench.action.toggleSidebarVisibility<CR>
+" nnoremap <Space>E :vsc workbench.action.<CR>
+nnoremap <Space>t :vsc workbench.action.toggleAuxiliaryBar<CR>
 nnoremap <Space>r :vsc editor.action.rename<CR>
 nnoremap <Space>v :vsc workbench.action.moveEditorToNextGroup<CR>
 nnoremap <Space>V :vsc workbench.action.moveEditorToPreviousGroup<CR>

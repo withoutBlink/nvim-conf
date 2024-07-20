@@ -1,0 +1,58 @@
+set scrolloff=5
+set clipboard=unnamed
+set tildeop
+set timeoutlen=300
+set ignorecase
+set smartcase
+set hlsearch
+
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+nnoremap ; :
+
+nnoremap <Space>w :w<CR>
+nnoremap <Space>c :q<CR>
+nnoremap <Space>C :q!<CR>
+nnoremap <Space>h :noh<CR>
+nnoremap <Space>d :vsc view.errorlist<CR>
+"nnoremap <C-o> :vsc view.navigatebackward<CR>
+"nnoremap <C-i> :vsc view.navigateforward<CR>
+nnoremap <C-o> :vsc vassistx.navigateback<CR>
+nnoremap <C-i> :vsc vassistx.navigateforward<CR>
+nnoremap <C-l> :vsc window.nextdocumentwindow<CR>
+nnoremap <C-h> :vsc window.nextdocumentwindow<CR>
+nnoremap <C-n> :vsc vassistx.refresultsnext<CR>
+nnoremap <C-p> :vsc vassistx.refresultsprevious<CR>
+"nnoremap <Space>F :vsc edit.gotosymbol<CR>
+"nnoremap <Space>f :vsc edit.gotofile<CR>
+nnoremap <Space>F :vsc vassistx.findsymboldialog<CR>
+nnoremap <Space>f :vsc vassistx.openfileinsolutiondialog<CR>
+nnoremap <Space>r :vsc vassistx.refactorrename<CR>
+nnoremap <Space>e :vsc view.solutionexplorer<CR>:vsc solutionexplorer.syncwithactivedocument<CR>
+nnoremap U :vsc edit.redo<CR>
+nnoremap u :vsc edit.undo<CR>
+nnoremap K :vsc edit.quickinfo<CR>
+nnoremap L :vsc window.nexttab<CR>
+nnoremap H :vsc window.previoustab<CR>
+"nnoremap gd :vsc edit.gotodefinition<CR>
+nnoremap gd :vsc vassistx.gotoimplementation<CR>
+"nnoremap gr :vsc edit.findallreferences<CR>
+nnoremap gr :vsc vassistx.findreferences<CR>
+"nnoremap gD :vsc edit.createdeclarationdefinition<CR>
+nnoremap gD :vsc vassistx.refactorcreateimplementation<CR>
+nnoremap gc :vsc edit.toggleblockcomment<CR>
+nnoremap gh :vsc editorcontextmenus.codewindow.toggleheadercodefile<CR>
+nnoremap [d :vsc edit.gotopreviousissueinfile<CR>
+nnoremap ]d :vsc edit.gotonextissueinfile<CR>
+
+"vnoremap gc :vsc edit.toggleblockcomment<CR>
+vnoremap gc :vsc vassistx.selectiontogglelinecomment<CR>
+vnoremap gb :vsc vassistx.selectiontoggleblockcomment<CR>
+vnoremap J :m'>+1<CR>gv
+vnoremap K :m'<-2<CR>gv
+vnoremap F :vsc edit.formatselection<CR>
+vnoremap < <gv
+vnoremap > >gv
+vnoremap <C-n> :vsc vassistx.refresultsnext<CR>
+vnoremap <C-p> :vsc vassistx.refresultsprevious<CR>
