@@ -2,9 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
---Remap space as leader key
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = ";"
+-- space is leader key
 
 -- Shorten function name
 local keymap = vim.keymap
@@ -63,19 +61,12 @@ keymap.set("n", "<leader>h", ":noh<CR>", opts_set_desc(default_opts, "Disable Hi
 -- Save buffer
 keymap.set("n", "<leader>w", ":w<CR>", opts_set_desc(default_opts, "Save Buffer"))
 
--- Close buffer(using mini buffer remove)
--- keymap.set("n", "<leader>c", ":bd<CR>", opts_set_desc(default_opts, "Close Buffer"))
-
 -- Quit
 keymap.set("n", "<leader>q", ":q<CR>", opts_set_desc(default_opts, "Quit Window"))
 
 -- Undo and Redo
 keymap.set("n", "u", ":undo<CR>", opts_set_desc(default_opts, "Undo"))
 keymap.set("n", "U", ":redo<CR>", opts_set_desc(default_opts, "Redo"))
-
--- Move text up and down
--- keymap.set("n", "<A-k>", ":m .-2<CR>==gi", opts_set_desc(default_opts,""))
--- keymap.set("n", "<A-j>", ":m .+1<CR>==gi", opts_set_desc(default_opts,""))
 
 -- Diagnostic
 local diagnostic_goto = function(next, severity)
@@ -93,14 +84,6 @@ keymap.set("n", "[d", diagnostic_goto(false), opts_set_desc(default_opts, "Prev 
 keymap.set("i", "jk", "<ESC>", opts_set_desc(default_opts, "Escape_1"))
 keymap.set("i", "kj", "<ESC>", opts_set_desc(default_opts, "Escape_2"))
 
--- Visual --
--- Quick command
--- keymap.set("v", ";", ":", opts_set_desc(default_opts,""))
-
--- Press jk fast to enter normal mode
--- keymap.set("v", "jk", "<ESC>", opts_set_desc(default_opts, ""))
--- keymap.set("v", "kj", "<ESC>", opts_set_desc(default_opts, ""))
-
 -- Stay in indent mode
 keymap.set("v", "<", "<gv", opts_set_desc(default_opts, "Indent Left"))
 keymap.set("v", ">", ">gv", opts_set_desc(default_opts, "Indent Right"))
@@ -113,14 +96,3 @@ keymap.set("v", "K", ":m .-2<CR>==", opts_set_desc(default_opts, "Move Down"))
 -- Move text up and down
 keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts_set_desc(default_opts, "X Move Up"))
 keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts_set_desc(default_opts, "X Move Down"))
--- keymap.set("x", "<A-l>", ":move '>+1<CR>gv-gv", opts_set_desc(default_opts,""))
--- keymap.set("x", "<A-h>", ":move '<-2<CR>gv-gv", opts_set_desc(default_opts,""))
-
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", opts_set_desc(default_opts,""))
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", opts_set_desc(default_opts,""))
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", opts_set_desc(default_opts,""))
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", opts_set_desc(default_opts,""))
---
--- LSP
