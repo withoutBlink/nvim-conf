@@ -4,6 +4,7 @@ local wk_keymaps = {
 	["<leader>x"] = "Trouble",
 	["<leader>g"] = "Git",
 	["<leader>n"] = "Noice",
+	["<leader>b"] = "Debug",
 	["s"] = "Search",
 	["sp"] = "Plugins",
 }
