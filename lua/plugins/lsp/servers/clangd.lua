@@ -10,6 +10,7 @@ local M = {
 	root_dir = function(fname)
 		return lspconfig.util.root_pattern("compile_commands.json", ".git")(fname) or lspconfig.util.path.dirname(fname)
 	end;
+  filetypes = {"c", "cc", "cpp", "objc", "objcpp"};
 }
 
 return M
