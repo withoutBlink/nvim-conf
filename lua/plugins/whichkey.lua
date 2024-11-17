@@ -28,6 +28,10 @@ local M = {
 				icons = {
 					mappings = false,
 				},
+				triggers = {
+					{ "s", mode = "n" },
+					{ "<auto>", mode = "nxso" },
+				},
 			})
 			wk.add(wk_keymaps)
 		end,
