@@ -27,6 +27,10 @@ local M = {
 			wk.setup({
         icons = {
           mappings = false,
+        },
+        triggers = {
+          {"s", mode = "n"},
+          {"<auto>", mode = "nxso"},
         }
       })
 			wk.add(wk_keymaps)
