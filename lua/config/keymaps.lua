@@ -19,9 +19,6 @@ end
 -- Delete key bindings, by binding it to Nop, and forbid for remap
 keymap.set({ "n", "v" }, "c", "<Nop>", default_opts)
 
--- Remove default K keymaps
-keymap.set( "v", "F", ":Format<CR>", default_opts)
-
 -- Terminal key binding
 -- TODO: add terminal key bindings to <leader>t and <leader>T
 
@@ -91,6 +88,9 @@ keymap.set("v", ">", ">gv", opts_set_desc(default_opts, "Indent Right"))
 -- Move text up and down
 keymap.set("v", "J", ":m .+1<CR>==", opts_set_desc(default_opts, "Move Up"))
 keymap.set("v", "K", ":m .-2<CR>==", opts_set_desc(default_opts, "Move Down"))
+
+-- Visual --
+keymap.set( "v", "F", ":Format<CR>", default_opts)
 
 -- Visual Block --
 -- Move text up and down
