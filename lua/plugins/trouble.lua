@@ -2,7 +2,8 @@ local M = {
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		keys = {
+		keys = function()
+      return {
 			{
 				"<leader>d",
 				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
@@ -20,7 +21,8 @@ local M = {
 				"<cmd>Trouble symbols toggle focus=true win.size=45<cr>",
 				desc = "Symbols (Trouble)",
 			},
-		},
+		}
+    end,
 	},
 }
 

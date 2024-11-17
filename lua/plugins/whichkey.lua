@@ -1,12 +1,12 @@
 local wk_keymaps = {
-	["<leader>"] = "Common",
-	["<leader>u"] = "Unknown",
-	["<leader>x"] = "Trouble",
-	["<leader>g"] = "Git",
-	["<leader>n"] = "Noice",
-	["<leader>b"] = "Debug",
-	["s"] = "Search",
-	["sp"] = "Plugins",
+	{"<leader>", desc = "Common"},
+	{"<leader>u", desc = "Unknown"},
+	{"<leader>x", desc = "Trouble"},
+	{"<leader>g", desc = "Git"},
+	{"<leader>n", desc = "Noice"},
+	{"<leader>b", desc = "Debug"},
+	{"s", desc = "Search"},
+	{"sp", desc = "Plugins"},
 }
 
 local M = {
@@ -24,8 +24,12 @@ local M = {
 		end,
 		config = function(opts)
 			local wk = require("which-key")
-			wk.setup(opts)
-			wk.register(wk_keymaps)
+			wk.setup({
+        icons = {
+          mappings = false,
+        }
+      })
+			wk.add(wk_keymaps)
 		end,
 	},
 }
