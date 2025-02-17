@@ -30,6 +30,14 @@ local telescope_keymaps = {
 		nowait = true,
 	},
 	{
+		"<leader>/",
+		function()
+			builtin.current_buffer_fuzzy_find()
+		end,
+		desc = "Find Symbol(Project)",
+		nowait = true,
+	},
+	{
 		"ss",
 		function()
 			require("telescope.builtin").grep_string({ cwd = vim.fn.expand("%:p:h") })
