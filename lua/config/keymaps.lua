@@ -45,6 +45,10 @@ keymap.set("n", "<C-j>", "<C-w>j", opts_set_desc(default_opts, "Focus Below"))
 keymap.set("n", "<C-k>", "<C-w>k", opts_set_desc(default_opts, "Focus Above"))
 keymap.set("n", "<C-l>", "<C-w>l", opts_set_desc(default_opts, "Focus Right"))
 
+-- Better window movements
+keymap.set("n", "<C-d>", "<C-d>zz", opts_set_desc(default_opts, "Move Down"))
+keymap.set("n", "<C-u>", "<C-u>zz", opts_set_desc(default_opts, "Move Down"))
+
 -- Resize with arrows
 keymap.set("n", "<C-Up>", ":resize -2<CR>", opts_set_desc(default_opts, "Resize Up"))
 keymap.set("n", "<C-Down>", ":resize +2<CR>", opts_set_desc(default_opts, "Resize Down"))
