@@ -92,18 +92,18 @@ local telescope_opts = {
 		winblend = 0,
 		mappings = {
 			['n'] = {
-				['<c-f>'] = function (prompt_bufnr)
+				['<c-d>'] = function (prompt_bufnr)
 					require("telescope.actions").preview_scrolling_down(prompt_bufnr)
 				end,
-				['<c-b>'] = function (prompt_bufnr)
+				['<c-u>'] = function (prompt_bufnr)
 					require("telescope.actions").preview_scrolling_up(prompt_bufnr)
 				end
 			},
 			['i'] = {
-				['<c-f>'] = function (prompt_bufnr)
+				['<c-d>'] = function (prompt_bufnr)
 					require("telescope.actions").preview_scrolling_down(prompt_bufnr)
 				end,
-				['<c-b>'] = function (prompt_bufnr)
+				['<c-u>'] = function (prompt_bufnr)
 					require("telescope.actions").preview_scrolling_up(prompt_bufnr)
 				end
 			},
