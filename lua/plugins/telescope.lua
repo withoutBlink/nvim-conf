@@ -40,7 +40,7 @@ local telescope_keymaps = {
 	{
 		"ss",
 		function()
-			require("telescope.builtin").grep_string({ cwd = vim.fn.expand("%:p:h") })
+			builtin.grep_string({ cwd = vim.fn.expand("%:p:h") })
 		end,
 		desc = "Find Symbol Under Cursor(Current)",
 		nowait = true,
@@ -48,7 +48,7 @@ local telescope_keymaps = {
 	{
 		"sf",
 		function()
-			require("telescope.builtin").find_files({ cwd = vim.fn.expand("%:p:h") })
+			builtin.find_files({ cwd = vim.fn.expand("%:p:h") })
 		end,
 		desc = "Find Files(Current)",
 		nowait = true,
@@ -56,7 +56,7 @@ local telescope_keymaps = {
 	{
 		"sF",
 		function()
-			require("telescope.builtin").live_grep({ cwd = vim.fn.expand("%:p:h") })
+			builtin.live_grep({ cwd = vim.fn.expand("%:p:h") })
 		end,
 		desc = "Find Symbols(Currnet)",
 		nowait = true,
@@ -64,21 +64,21 @@ local telescope_keymaps = {
 	{
 		"sps",
 		function()
-			require("telescope.builtin").grep_string({ cwd = require("lazy.core.config").options.root })
+			builtin.grep_string({ cwd = require("lazy.core.config").options.root })
 		end,
 		desc = "Find Symbol Under Cursor(Plugins)",
 	},
 	{
 		"spf",
 		function()
-			require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+			builtin.find_files({ cwd = require("lazy.core.config").options.root })
 		end,
 		desc = "Find Files(Plugins)",
 	},
 	{
 		"spF",
 		function()
-			require("telescope.builtin").live_grep({ cwd = require("lazy.core.config").options.root })
+			builtin.live_grep({ cwd = require("lazy.core.config").options.root })
 		end,
 		desc = "Find Symbols(Plugins)",
 	},
@@ -91,21 +91,21 @@ local telescope_opts = {
 		sorting_strategy = "ascending",
 		winblend = 0,
 		mappings = {
-			['n'] = {
-				['<c-f>'] = function (prompt_bufnr)
+			["n"] = {
+				["<c-d>"] = function(prompt_bufnr)
 					require("telescope.actions").preview_scrolling_down(prompt_bufnr)
 				end,
-				['<c-b>'] = function (prompt_bufnr)
+				["<c-u>"] = function(prompt_bufnr)
 					require("telescope.actions").preview_scrolling_up(prompt_bufnr)
-				end
+				end,
 			},
-			['i'] = {
-				['<c-f>'] = function (prompt_bufnr)
+			["i"] = {
+				["<c-d>"] = function(prompt_bufnr)
 					require("telescope.actions").preview_scrolling_down(prompt_bufnr)
 				end,
-				['<c-b>'] = function (prompt_bufnr)
+				["<c-u>"] = function(prompt_bufnr)
 					require("telescope.actions").preview_scrolling_up(prompt_bufnr)
-				end
+				end,
 			},
 		},
 	},
@@ -114,6 +114,7 @@ local telescope_opts = {
 local M = {
 	{
 		"nvim-telescope/telescope.nvim",
+		depends = "nvim-lua/plenary.nvim",
 		opts = telescope_opts,
 		keys = function()
 			return telescope_keymaps

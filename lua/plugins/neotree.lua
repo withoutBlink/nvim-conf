@@ -56,6 +56,7 @@ end
 local M = {
 	{
 		"neo-tree.nvim",
+		enabled = false,
 		keys = neotree_keymaps,
 		config = neotree_config,
 	},
