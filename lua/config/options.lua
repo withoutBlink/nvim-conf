@@ -30,4 +30,6 @@ vim.opt.mouse = ""
 
 vim.g.lazyvim_picker = "telescope"
 
+vim.opt.statusline = "%<b%n: %f%h%m%r %= %l,%c 0x%B %{&fenc} %P"
+
 -- TODO: Set vim to notice _ and uppercase as word
