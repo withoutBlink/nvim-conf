@@ -5,6 +5,8 @@
 -- Trun off autoformat
 vim.g.autoformat = false
 
+vim.g.wrap = true
+
 -- Set vim to use tabs
 -- vim.opt.tabstop = 4
 -- vim.opt.shiftwidth = 4
