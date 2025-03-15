@@ -1,6 +1,5 @@
-
 local function get_logo()
-  local logo = [[
+	local logo = [[
 	██████╗ ███████╗███████╗███████╗██████╗ ████████╗███████╗██████╗ 
 	██╔══██╗██╔════╝██╔════╝██╔════╝██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
 	██║  ██║█████╗  ███████╗█████╗  ██████╔╝   ██║   █████╗  ██║  ██║
@@ -14,21 +13,25 @@ local function get_logo()
 	██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
 	╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 ]]
-  logo = string.rep("\n", 8) .. logo .. "\n\n"
-  return logo
+	logo = string.rep("\n", 8) .. logo .. "\n\n"
+	return logo
 end
 
 local M = {
 	"folke/snacks.nvim",
-  keys = function() end,
-  opts = {
-    dashboard = {
-      preset = {
-        keys = function() end,
-        header = get_logo(),
-      }
-    }
-  }
+	keys = function() end,
+	opts = {
+		dashboard = {
+			preset = {
+				keys = function() end,
+				header = get_logo(),
+			},
+			sections = {
+				{ section = "header" },
+				{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+			},
+		},
+	},
 }
 
 return M
