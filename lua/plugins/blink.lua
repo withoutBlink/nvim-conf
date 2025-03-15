@@ -2,7 +2,6 @@ local M = {
 	"saghen/blink.cmp",
 	opts = {
 		keymap = {
-      preset = 'none',
 			["<Tab>"] = {
 				function(cmp)
 					if cmp.snippet_active() then
