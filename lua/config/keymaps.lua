@@ -17,13 +17,10 @@ local function opts_set_desc(orig_opts, desc)
 end
 
 -- Delete key bindings, by binding it to Nop, and forbid for remap
-keymap.set({ "n", "v" }, "c", "<Nop>", default_opts)
+-- keymap.set({ "n", "v" }, "c", "<Nop>", default_opts)
 
 -- Delete s from standard key bindings
 keymap.set({ "n" }, "s", "<Nop>", default_opts)
-
--- Terminal key binding
--- TODO: add terminal key bindings to <leader>t and <leader>T
 
 -- Modes
 --   normal_mode = "n",
@@ -33,9 +30,12 @@ keymap.set({ "n" }, "s", "<Nop>", default_opts)
 --   term_mode = "t",
 --   command_mode = "c",
 -- Better up/aown
-keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- keymap.set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
 keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap.set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Normal --

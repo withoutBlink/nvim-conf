@@ -1,4 +1,6 @@
-local logo = [[
+
+local function get_logo()
+  local logo = [[
 	██████╗ ███████╗███████╗███████╗██████╗ ████████╗███████╗██████╗ 
 	██╔══██╗██╔════╝██╔════╝██╔════╝██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
 	██║  ██║█████╗  ███████╗█████╗  ██████╔╝   ██║   █████╗  ██║  ██║
@@ -12,24 +14,21 @@ local logo = [[
 	██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
 	╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 ]]
-
-logo = string.rep("\n", 8) .. logo .. "\n\n"
+  logo = string.rep("\n", 8) .. logo .. "\n\n"
+  return logo
+end
 
 local M = {
-	{
-		"nvimdev/dashboard-nvim",
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
-		event = "VimEnter",
-		opts = {
-			theme = "hyper",
-			config = {
-				header = vim.split(logo, "\n"),
-				shortcut = {
-					{ desc = "[ withoutBlink]", group = "DashboardShortCut" },
-				},
-			},
-		},
-	},
+	"folke/snacks.nvim",
+  keys = function() end,
+  opts = {
+    dashboard = {
+      preset = {
+        keys = function() end,
+        header = get_logo(),
+      }
+    }
+  }
 }
 
 return M

@@ -1,33 +1,36 @@
-
 local M = {
 	{
 		"gd",
-		function()
-			require("telescope.builtin").lsp_definitions({ reuse_win = true })
-		end,
+    function()
+      require("fzf-lua").lsp_definitions()
+    end,
 		desc = "Goto Definition",
 	},
 	{
 		"gr",
-		"<cmd>Telescope lsp_references<cr>",
+		function()
+			require("fzf-lua").lsp_references()
+		end,
 		desc = "References",
 	},
 	{
 		"gD",
-		vim.lsp.buf.declaration,
+		function()
+			require("fzf-lua").lsp_declarations()
+		end,
 		desc = "Goto Declaration",
 	},
 	{
 		"gI",
 		function()
-			require("telescope.builtin").lsp_implementations({ reuse_win = true })
+			require("fzf-lua").lsp_implementations({ reuse_win = true })
 		end,
 		desc = "Goto Implementation",
 	},
 	{
 		"gy",
 		function()
-			require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
+			require("fzf-lua").lsp_type_definitions({ reuse_win = true })
 		end,
 		desc = "Goto T[y]pe Definition",
 	},
@@ -51,12 +54,7 @@ local M = {
 		vim.lsp.buf.signature_help,
 		mode = "i",
 		desc = "Signature Help",
-	},
-	{
-		"<leader>r",
-		vim.lsp.buf.rename,
-		desc = "Rename",
-	},
+	}
 }
 
 return M

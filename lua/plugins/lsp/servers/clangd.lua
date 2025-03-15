@@ -8,7 +8,7 @@ local M = {
 	keys = false;
 	-- TODO: Emergently fix for clangd to find the project root when there is no compile_commands.json
 	root_dir = function(fname)
-		return lspconfig.util.root_pattern("compile_commands.json", ".git")(fname) or lspconfig.util.path.dirname(fname)
+		return lspconfig.util.root_pattern("compile_commands.json", ".git")(fname) or vim.fs.dirname(fname)
 	end;
   filetypes = {"c", "cc", "cpp", "objc", "objcpp"};
 }

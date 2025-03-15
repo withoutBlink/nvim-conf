@@ -19,7 +19,7 @@ local M = {
 				{
 					"<leader>t",
 					"<cmd>Trouble symbols toggle focus=true win.size=45<cr>",
-					desc = "Symbols (Trouble)",
+					desc = "Symbols",
 				},
 			}
 		end,

@@ -15,6 +15,9 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
+vim.opt.smoothscroll = false
+vim.g.snacks_animate = false
+
 --[[
 Use \c to ignore case and \C to match case,
 other than use vim opt ignorecase,
@@ -28,6 +31,5 @@ vim.opt.hlsearch = true
 --Set vim to ignore mouse event
 vim.opt.mouse = ""
 
-vim.g.lazyvim_picker = "telescope"
-
--- TODO: Set vim to notice _ and uppercase as word
+vim.g.lazyvim_picker = "fzf"
+-- vim.g.lazyvim_picker = "telescope"
