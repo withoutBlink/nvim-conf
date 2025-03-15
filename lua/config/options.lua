@@ -5,6 +5,8 @@
 -- Trun off autoformat
 vim.g.autoformat = false
 
+vim.g.wrap = true
+
 -- Set vim to use tabs
 -- vim.opt.tabstop = 4
 -- vim.opt.shiftwidth = 4
@@ -32,4 +34,5 @@ vim.opt.hlsearch = true
 vim.opt.mouse = ""
 
 vim.g.lazyvim_picker = "fzf"
--- vim.g.lazyvim_picker = "telescope"
+
+vim.opt.statusline = "%<b%n: %f%h%m%r %= %l,%c 0x%B %{&fenc} %P"
