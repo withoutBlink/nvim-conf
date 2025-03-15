@@ -63,6 +63,10 @@ local M = {
 		"echasnovski/mini.bufremove",
 		enabled = false,
 	},
+	{
+		"nvim-lualine/lualine.nvim",
+		enabled = false,
+	},
 }
 
 return M
