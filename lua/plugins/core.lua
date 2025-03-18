@@ -1,9 +1,10 @@
-
 local M = {
-  "LazyVim/LazyVim",
-  opts = {
-    colorscheme = "gruvbox"
-  }
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
+  },
 }
 
 return M

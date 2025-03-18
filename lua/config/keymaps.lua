@@ -11,9 +11,9 @@ local default_opts = { noremap = true, silent = true }
 --- @param orig_opts table<string, any>
 --- @param desc string
 local function opts_set_desc(orig_opts, desc)
-	local res_opts = orig_opts
-	res_opts.desc = desc
-	return res_opts
+  local res_opts = orig_opts
+  res_opts.desc = desc
+  return res_opts
 end
 
 -- Delete key bindings, by binding it to Nop, and forbid for remap
@@ -74,11 +74,11 @@ keymap.set("n", "U", ":redo<CR>", opts_set_desc(default_opts, "Redo"))
 
 -- Diagnostic
 local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-	severity = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		go({ severity = severity })
-	end
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go({ severity = severity })
+  end
 end
 keymap.set("n", "]d", diagnostic_goto(true), opts_set_desc(default_opts, "Next Diagnostics"))
 keymap.set("n", "[d", diagnostic_goto(false), opts_set_desc(default_opts, "Prev Diagnostics"))
@@ -97,7 +97,7 @@ keymap.set("v", "J", ":m .+1<CR>==", opts_set_desc(default_opts, "Move Up"))
 keymap.set("v", "K", ":m .-2<CR>==", opts_set_desc(default_opts, "Move Down"))
 
 -- Visual --
-keymap.set( "v", "F", ":Format<CR>", default_opts)
+keymap.set("v", "F", ":Format<CR>", default_opts)
 
 -- Visual Block --
 -- Move text up and down
