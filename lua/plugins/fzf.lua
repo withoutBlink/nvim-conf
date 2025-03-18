@@ -76,13 +76,21 @@ local fzf_keymaps = {
 	},
 }
 
-local fzf_opts = {
-}
-
 local M = {
 	{
 		"ibhagwan/fzf-lua",
-		opts = fzf_opts,
+		opts = function(_, opts)
+			local actions = require("fzf-lua").actions
+			opts.files.actions = {
+				["ctrl-i"] = { actions.toggle_ignore },
+				["ctrl-h"] = { actions.toggle_hidden },
+			}
+			opts.grep.actions = {
+				["ctrl-i"] = { actions.toggle_ignore },
+				["ctrl-h"] = { actions.toggle_hidden },
+			}
+			return opts
+		end,
 		keys = function()
 			return fzf_keymaps
 		end,
