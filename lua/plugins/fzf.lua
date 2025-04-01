@@ -37,6 +37,14 @@ local fzf_keymaps = {
     nowait = true,
   },
   {
+    "<leader>e",
+    function()
+      require("fzf-lua").git_files()
+    end,
+    desc = "Find Git Files",
+    nowait = true,
+  },
+  {
     "ss",
     function()
       require("fzf-lua").grep_cword({ cwd = vim.fn.expand("%:p:h") })
