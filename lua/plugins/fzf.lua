@@ -38,9 +38,13 @@ local fzf_keymaps = {
   },
   {
     "<leader>e",
-    function()
-      require("fzf-lua").git_files()
-    end,
+    ":Explore<CR>",
+    desc = "Find Git Files",
+    nowait = true,
+  },
+  {
+    "<leader>E",
+    ":Explore .<CR>",
     desc = "Find Git Files",
     nowait = true,
   },
