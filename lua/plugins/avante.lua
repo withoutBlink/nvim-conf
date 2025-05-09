@@ -11,7 +11,7 @@ local M = {
         timeout = 30000,
         temperature = 0,
         max_tokens = 8192,
-        proxy = "http://127.0.0.1:10809", -- [protocol://]host[:port] Use this proxy
+        proxy = vim.env.AVANTE_PROXY, -- [protocol://]host[:port] Use this proxy
         --reasoning_effort = "medium", -- low|medium|high，for resonalble
       },
     },
