@@ -1,6 +1,7 @@
 local M = {
   {
     "yetone/avante.nvim",
+    enabled = false,
     event = "VeryLazy",
     version = false, -- always use false here
     opts = {
@@ -27,10 +28,11 @@ local M = {
   },
   {
     "MunifTanjim/nui.nvim",
-    enabled = true;
+    enabled = false;
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    enabled = false,
     opts = {
       file_types = { "markdown", "Avante" },
     },
