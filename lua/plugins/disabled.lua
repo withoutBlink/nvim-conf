@@ -35,10 +35,6 @@ local M = {
     "folke/noice.nvim",
     enabled = false,
   },
-  -- {
-  --   "MunifTanjim/nui.nvim",
-  --   enabled = false,
-  -- },
   {
     "catppuccin/nvim",
     enabled = false,
