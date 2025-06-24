@@ -35,4 +35,4 @@ vim.opt.mouse = ""
 
 vim.g.lazyvim_picker = "fzf"
 
-vim.opt.statusline = "%<b%n: %f%h%m%r %= %l,%c 0x%B %{&fenc} %P"
+vim.opt.laststatus = 0
