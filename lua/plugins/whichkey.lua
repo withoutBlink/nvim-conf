@@ -5,7 +5,6 @@ local wk_keymaps = {
   { "<leader>g", desc = "Git" },
   { "<leader>n", desc = "Noice" },
   { "<leader>b", desc = "Buffer" },
-  { "<leader>c", desc = "Code" },
   { "s", desc = "Search" },
   { "sp", desc = "Plugins" },
 }

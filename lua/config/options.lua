@@ -16,9 +16,7 @@ vim.g.wrap = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-
 vim.opt.smoothscroll = false
-vim.g.snacks_animate = false
 
 --[[
 Use \c to ignore case and \C to match case,
@@ -33,6 +31,5 @@ vim.opt.hlsearch = true
 --Set vim to ignore mouse event
 vim.opt.mouse = ""
 
-vim.g.lazyvim_picker = "fzf"
-
 vim.opt.laststatus = 0
+
