@@ -72,9 +72,11 @@ keymap.set("n", "<leader>h", ":noh<CR>", opts_set_desc(default_opts, "Disable Hi
 
 -- Save buffer
 keymap.set("n", "<leader>w", ":w<CR>", opts_set_desc(default_opts, "Save Buffer"))
+keymap.set("n", "<leader>W", ":wa<CR>", opts_set_desc(default_opts, "Save Buffer"))
 
 -- Quit
 keymap.set("n", "<leader>q", ":q<CR>", opts_set_desc(default_opts, "Quit Window"))
+keymap.set("n", "<leader>Q", ":q!<CR>", opts_set_desc(default_opts, "Quit Window"))
 
 -- Undo and Redo
 keymap.set("n", "u", ":undo<CR>", opts_set_desc(default_opts, "Undo"))
