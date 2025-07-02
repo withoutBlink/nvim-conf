@@ -1,7 +1,6 @@
 local M = {
   {
     "nvim-treesitter/nvim-treesitter",
-    enabled = false,
     opts = {
       indent = {
         disable = { "c", "cpp" },
@@ -10,7 +9,6 @@ local M = {
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    enabled = false,
   },
 }
 

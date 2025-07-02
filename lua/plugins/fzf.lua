@@ -1,7 +1,5 @@
-local util = require("lazyvim.util")
 
 -- get current project folder during loading plugins
-local project_pwd = util.root()
 
 local fzf_keymaps = {
   {
@@ -15,7 +13,7 @@ local fzf_keymaps = {
   {
     "<leader>f",
     function()
-      require("fzf-lua").files({ cwd = project_pwd })
+      require("fzf-lua").files({cwd = "."})
     end,
     desc = "Find Files(Project)",
     nowait = true,
@@ -23,7 +21,7 @@ local fzf_keymaps = {
   {
     "<leader>F",
     function()
-      require("fzf-lua").live_grep({ cwd = project_pwd })
+      require("fzf-lua").live_grep()
     end,
     desc = "Find Symbol(Project)",
     nowait = true,
@@ -34,18 +32,6 @@ local fzf_keymaps = {
       require("fzf-lua").grep_curbuf()
     end,
     desc = "Find Symbol(File)",
-    nowait = true,
-  },
-  {
-    "<leader>e",
-    ":Explore<CR>",
-    desc = "Find Git Files",
-    nowait = true,
-  },
-  {
-    "<leader>E",
-    ":Explore .<CR>",
-    desc = "Find Git Files",
     nowait = true,
   },
   {
@@ -91,18 +77,6 @@ local fzf_keymaps = {
 local M = {
   {
     "ibhagwan/fzf-lua",
-    opts = function(_, opts)
-      local actions = require("fzf-lua").actions
-      opts.files.actions = {
-        ["ctrl-i"] = { actions.toggle_ignore },
-        ["ctrl-h"] = { actions.toggle_hidden },
-      }
-      opts.grep.actions = {
-        ["ctrl-i"] = { actions.toggle_ignore },
-        ["ctrl-h"] = { actions.toggle_hidden },
-      }
-      return opts
-    end,
     keys = function()
       return fzf_keymaps
     end,

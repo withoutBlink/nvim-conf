@@ -41,7 +41,7 @@ local M = {
   },
   {
     "gh",
-    "<cmd>ClangdSwitchSourceHeader<cr>",
+    "<cmd>LspClangdSwitchSourceHeader<cr>",
     desc = "Switch Header/Source",
   },
   {
