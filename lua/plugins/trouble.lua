@@ -2,17 +2,19 @@ local M = {
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = { "Trouble" },
+    opts = {},
     keys = function()
       return {
         {
           "<leader>d",
-          "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+          "<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>",
           desc = "Document Diag",
           nowait = true,
         },
         {
           "<leader>D",
-          "<cmd>Trouble diagnostics toggle<cr>",
+          "<cmd>Trouble diagnostics toggle focus=true<cr>",
           desc = "Project Diag",
           nowait = true,
         },
