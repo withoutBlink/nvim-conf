@@ -27,6 +27,7 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = false
 
 vim.opt.hlsearch = true
+vim.opt.cursorline = true
 
 --Set vim to ignore mouse event
 vim.opt.mouse = ""
