@@ -34,3 +34,5 @@ vim.opt.mouse = ""
 
 vim.opt.laststatus = 0
 
+vim.opt.clipboard = "unnamedplus"
+
