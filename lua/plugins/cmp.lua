@@ -1,7 +1,6 @@
 local M = {
   {
     "saghen/blink.cmp",
-    build = "cargo build --release",
     opts_extend = {
       "sources.completion.enabled_providers",
       "sources.compat",
@@ -18,6 +17,9 @@ local M = {
     },
     event = "InsertEnter",
     opts = {
+      fuzzy = {
+        implementation = "lua",
+      },
       snippets = {
       },
       appearance = {
