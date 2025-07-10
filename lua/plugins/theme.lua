@@ -3,7 +3,7 @@ local M = {
     "ellisonleao/gruvbox.nvim",
   },
   {
-    "webhooked/kanso.nvim",
+    "vim-scripts/strange",
   },
 }
 
