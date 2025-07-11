@@ -31,7 +31,7 @@ local fzf_keymaps = {
     function()
       require("fzf-lua").grep_curbuf()
     end,
-    desc = "Find Symbol(File)",
+    desc = "Find Symbol(Buffer)",
     nowait = true,
   },
   {
@@ -39,7 +39,7 @@ local fzf_keymaps = {
     function()
       require("fzf-lua").grep_cword({ cwd = vim.fn.expand("%:p:h") })
     end,
-    desc = "Find Symbol Under Cursor(CWD)",
+    desc = "Find Symbol Under Cursor(Current)",
     nowait = true,
   },
   {
@@ -47,7 +47,7 @@ local fzf_keymaps = {
     function()
       require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") })
     end,
-    desc = "Find Files(CWD)",
+    desc = "Find Files(Current)",
     nowait = true,
   },
   {
