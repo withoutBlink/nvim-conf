@@ -1,18 +1,12 @@
 local M = {
   {
     "ellisonleao/gruvbox.nvim",
-    opts = {
-      transparent_mode = true,
-    }
   },
   {
     "vague2k/vague.nvim",
     opts = {
-      transparent = true,
+      transparent = true
     }
-  },
-  {
-    "nyvyme/qtcreator.nvim",
   },
 }
 
