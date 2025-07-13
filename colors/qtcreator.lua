@@ -1,7 +1,6 @@
 vim.cmd("highlight clear")
 if vim.fn.has("syntax_on") then vim.cmd("syntax reset") end
 vim.g.colors_name = "qtcreator"
-vim.o.background = "dark"
 vim.opt.termguicolors = true
 
 local palette = {

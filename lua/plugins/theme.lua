@@ -4,9 +4,6 @@ local M = {
   },
   {
     "vague2k/vague.nvim",
-    opts = {
-      transparent = true
-    }
   },
 }
 
