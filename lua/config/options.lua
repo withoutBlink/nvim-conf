@@ -47,3 +47,7 @@ vim.opt.laststatus = 0
 -- Use system clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- Use indent for folding
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
+
