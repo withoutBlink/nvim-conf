@@ -113,3 +113,4 @@ keymap.set("v", "F", ":Format<CR>", default_opts)
 -- Move text up and down
 keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts_set_desc(default_opts, "X Move Up"))
 keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts_set_desc(default_opts, "X Move Down"))
+keymap.set("x", "p", '"_dP', opts_set_desc(default_opts, "Safe Paste"))
