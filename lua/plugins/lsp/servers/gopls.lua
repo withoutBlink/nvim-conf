@@ -1,7 +1,6 @@
 local M = {
   settings = {
     gopls = {
-      semanticTokens = true,
     }
   }
 }
