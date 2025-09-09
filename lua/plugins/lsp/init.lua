@@ -12,7 +12,7 @@ local M = {
     config = function(_, opts)
       local servers = require("plugins.lsp.servers")
       local function setup(server, server_opts)
-        if server_opts.enabled == false or server_opts.mason == true then
+        if server_opts.enabled == false then
           return
         end
         vim.lsp.enable(server)
@@ -33,6 +33,7 @@ local M = {
         end
       })
     end,
+    lazy = false,
   },
   {
     "mason-org/mason.nvim",
