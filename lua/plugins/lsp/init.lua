@@ -76,6 +76,8 @@ local M = {
   {
     "mason-org/mason-lspconfig.nvim",
     version = "^1.0.0",
+    config = function ()
+    end,
     keys = function()
       return {}
     end,
