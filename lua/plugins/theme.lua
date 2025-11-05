@@ -5,6 +5,9 @@ local M = {
   {
     "vague2k/vague.nvim",
   },
+  {
+    "shatur/neovim-ayu",
+  }
 }
 
 return M
