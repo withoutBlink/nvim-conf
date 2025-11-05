@@ -45,6 +45,18 @@ local M = {
     desc = "Switch Header/Source",
   },
   {
+    "<leader>ca",
+    function()
+      require("fzf-lua").lsp_code_actions()
+    end,
+    desc = "Code actions",
+  },
+  {
+    "<leader>cr",
+    vim.lsp.buf.rename,
+    desc = "Rename",
+  },
+  {
     "K",
     vim.lsp.buf.hover,
     desc = "Hover",
