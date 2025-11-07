@@ -7,4 +7,4 @@ require("config.options")
 require("config.lazy")
 require("config.autocmds")
 
-vim.cmd('colorscheme ayu')
+vim.cmd('colorscheme habamax')
