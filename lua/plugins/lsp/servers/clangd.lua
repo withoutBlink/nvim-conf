@@ -9,6 +9,7 @@ local M = {
     '--clang-tidy',
     '--background-index',
     '--offset-encoding=utf-8',
+    '--header-insertion=never'
   },
   root_markers = { '.clangd', 'compile_commands.json' },
 }
