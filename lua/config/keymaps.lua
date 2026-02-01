@@ -64,7 +64,7 @@ keymap.set("n", "<leader>e", ":Explore<CR>", opts_set_desc(default_opts, "Explor
 keymap.set("n", "<leader>E", ":Explore .<CR>", opts_set_desc(default_opts, "Explore"))
 
 -- Buffers
-keymap.set("n", "<leader>bd", ":bd<CR>", opts_set_desc(default_opts, "Delete Buffer"))
+keymap.set("n", "<leader>bd", ":bp|bd #<CR>", opts_set_desc(default_opts, "Delete Buffer"))
 keymap.set("n", "<leader>bD", ":bd!<CR>", opts_set_desc(default_opts, "Delete Buffer(Force)"))
 
 -- Disable highlight

@@ -1,13 +1,13 @@
 local wk_keymaps = {
-  { "<leader>", desc = "Common" },
+  { "<leader>",  desc = "Common" },
   { "<leader>u", desc = "Unknown" },
   { "<leader>x", desc = "Trouble" },
   { "<leader>g", desc = "Git" },
   { "<leader>n", desc = "Noice" },
   { "<leader>b", desc = "Buffer" },
-  { "<leader>c", desc = "Code Actions" },
-  { "s", desc = "Search" },
-  { "sp", desc = "Plugins" },
+  { "g",         desc = "Goto" },
+  { "s",         desc = "Search" },
+  { "sp",        desc = "Plugins" },
 }
 
 local M = {
@@ -30,7 +30,7 @@ local M = {
           mappings = false,
         },
         triggers = {
-          { "s", mode = "n" },
+          { "s",      mode = "n" },
           { "<auto>", mode = "nxso" },
         },
       })
