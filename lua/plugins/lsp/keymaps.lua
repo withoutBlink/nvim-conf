@@ -6,13 +6,14 @@ local M = {
     end,
     desc = "Goto Definition",
   },
-  {
-    "gr",
-    function()
-      require("fzf-lua").lsp_references()
-    end,
-    desc = "References",
-  },
+  -- using grr for reference
+  -- {
+  --   "gr",
+  --   function()
+  --     require("fzf-lua").lsp_references()
+  --   end,
+  --   desc = "References",
+  -- },
   {
     "gD",
     function()
