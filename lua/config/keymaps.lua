@@ -66,7 +66,7 @@ keymap.set("n", "<leader>E", ":Explore .<CR>", opts_set_desc(default_opts, "Expl
 -- Buffers
 keymap.set("n", "<leader>bd", ":bp|bd #<CR>", opts_set_desc(default_opts, "Delete Buffer"))
 keymap.set("n", "<leader>bD", ":bd!<CR>", opts_set_desc(default_opts, "Delete Buffer(Force)"))
-keymap.set("n", "<leader>btn", ":tabedit %<CR>", opts_set_desc(default_opts, "Create Tab"))
+keymap.set("n", "<leader>btc", ":tabedit %<CR>", opts_set_desc(default_opts, "Create Tab"))
 keymap.set("n", "<leader>btd", ":tabclose<CR>", opts_set_desc(default_opts, "Close Tab"))
 
 -- Disable highlight
