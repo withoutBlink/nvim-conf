@@ -1,11 +1,13 @@
 
 -- get current project folder during loading plugins
 
+
 local fzf_keymaps = {
   {
     "<leader>s",
     function()
-      require("fzf-lua").grep_cword()
+      local project_path = (vim.lsp.buf.list_workspace_folders() or { "." })[1]
+      require("fzf-lua").grep_cword({ cwd = project_path })
     end,
     desc = "Find Symbol Under Cursor(Project)",
     nowait = true,
@@ -13,7 +15,8 @@ local fzf_keymaps = {
   {
     "<leader>f",
     function()
-      require("fzf-lua").files({cwd = "."})
+      local project_path = (vim.lsp.buf.list_workspace_folders() or { "." })[1]
+      require("fzf-lua").files({ cwd = project_path })
     end,
     desc = "Find Files(Project)",
     nowait = true,
@@ -21,7 +24,8 @@ local fzf_keymaps = {
   {
     "<leader>F",
     function()
-      require("fzf-lua").live_grep()
+      local project_path = (vim.lsp.buf.list_workspace_folders() or { "." })[1]
+      require("fzf-lua").live_grep({ cwd = project_path })
     end,
     desc = "Find Symbol(Project)",
     nowait = true,

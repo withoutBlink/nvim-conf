@@ -1,16 +1,12 @@
 local M = {
   {
     "gd",
-    function()
-      require("fzf-lua").lsp_definitions()
-    end,
+    vim.lsp.buf.definition,
     desc = "Goto Definition",
   },
   {
     "gD",
-    function()
-      require("fzf-lua").lsp_declarations()
-    end,
+    vim.lsp.buf.declaration,
     desc = "Goto Declaration",
   },
   {
