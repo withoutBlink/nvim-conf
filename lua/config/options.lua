@@ -11,6 +11,9 @@ vim.g.autoformat = false
 -- Set auto warp lines
 vim.g.wrap = true
 
+-- Set netrw with no banner
+vim.g.netrw_banner = false
+
 -- Set vim to use tabs
 -- vim.opt.tabstop = 4
 -- vim.opt.shiftwidth = 4
