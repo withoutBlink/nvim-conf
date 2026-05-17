@@ -6,6 +6,7 @@ local M = {
       "sources.compat",
       "sources.default",
     },
+    version = "1.*",
     dependencies = {
       "rafamadriz/friendly-snippets",
       -- add blink.compat to dependencies
