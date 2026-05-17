@@ -85,15 +85,17 @@ keymap.set("n", "u", ":undo<CR>", opts_set_desc(default_opts, "Undo"))
 keymap.set("n", "U", ":redo<CR>", opts_set_desc(default_opts, "Redo"))
 
 -- Diagnostic
-local diagnostic_goto = function(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-  severity = severity and vim.diagnostic.severity[severity] or nil
+---@param opts table<string, any>
+---@return function
+local function diag_goto(opts)
+  opts.float = true
   return function()
-    go({ severity = severity })
+    vim.diagnostic.jump(opts)
   end
 end
-keymap.set("n", "]d", diagnostic_goto(true), opts_set_desc(default_opts, "Next Diagnostics"))
-keymap.set("n", "[d", diagnostic_goto(false), opts_set_desc(default_opts, "Prev Diagnostics"))
+
+keymap.set("n", "[d", diag_goto({ count = -1 }), opts_set_desc(default_opts, "Prev Diagnostics"))
+keymap.set("n", "]d", diag_goto({ count = 1 }), opts_set_desc(default_opts, "Next Diagnostics"))
 
 -- Insert --
 -- Press jk fast to enter normal mode
