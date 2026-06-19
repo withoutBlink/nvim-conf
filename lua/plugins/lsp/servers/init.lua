@@ -14,6 +14,7 @@ local M = {
   arduino_language_server = als_config,
   ts_ls = tsls_config,
   lua_ls = {},
+  basedpyright = {},
 }
 
 return M
