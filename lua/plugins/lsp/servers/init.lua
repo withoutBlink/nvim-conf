@@ -1,9 +1,9 @@
 local clangd_config = require("plugins.lsp.servers.clangd")
-local gopls_config = require("plugins.lsp.servers.gopls")
-local tsls_config = require("plugins.lsp.servers.tsls")
-local als_config = require("plugins.lsp.servers.als")
 local swift_config = require("plugins.lsp.servers.swift")
 local rust_config = require("plugins.lsp.servers.rust")
+local gopls_config = require("plugins.lsp.servers.gopls")
+local als_config = require("plugins.lsp.servers.als")
+local tsls_config = require("plugins.lsp.servers.tsls")
 
 
 local M = {

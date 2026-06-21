@@ -1,6 +1,5 @@
 local M = {
   settings = {
-
     checkOnSave = {
       command = "clippy",
     },

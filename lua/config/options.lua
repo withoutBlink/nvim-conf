@@ -59,3 +59,12 @@ vim.opt.laststatus = 0
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
 
+-- Use vim native autocomplete
+vim.opt.autocomplete = true
+vim.opt.completeopt = {
+  "menu",
+  "popup",
+  "noinsert"
+}
+vim.opt.pumheight = 9
+vim.opt.pumborder = "rounded"

@@ -1,4 +1,3 @@
-local lsp_keymaps = require("plugins.lsp.keymaps")
 
 local M = {
   {
@@ -7,9 +6,12 @@ local M = {
       "mason-org/mason.nvim",
       "mason-org/mason-lspconfig.nvim"
     },
-    keys = lsp_keymaps,
+    keys = function()
+      local lsp_keymaps = require("plugins.lsp.keymaps")
+      return lsp_keymaps
+    end,
     opts = {},
-    config = function(_, opts)
+    config = function()
       local servers = require("plugins.lsp.servers")
       local function setup(server, server_opts)
         if server_opts.enabled == false then
@@ -22,16 +24,6 @@ local M = {
       for server, server_opts in pairs(servers) do
         setup(server, server_opts)
       end
-
-      vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(args)
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          if not client then
-            return
-          end
-          vim.print("LSP Client Attached")
-        end
-      })
     end,
     lazy = false,
   },
@@ -45,11 +37,7 @@ local M = {
     build = ":MasonUpdate",
     opts_extend = { "ensure_installed" },
     opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "shfmt",
-      },
+      ensure_installed = function() return {} end
     },
     config = function(_, opts)
       require("mason").setup(opts)
