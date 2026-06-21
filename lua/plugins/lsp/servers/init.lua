@@ -3,7 +3,6 @@ local swift_config = require("plugins.lsp.servers.swift")
 local rust_config = require("plugins.lsp.servers.rust")
 local gopls_config = require("plugins.lsp.servers.gopls")
 local als_config = require("plugins.lsp.servers.als")
-local tsls_config = require("plugins.lsp.servers.tsls")
 
 
 local M = {
@@ -12,7 +11,7 @@ local M = {
   rust_analyzer = rust_config,
   gopls = gopls_config,
   arduino_language_server = als_config,
-  ts_ls = tsls_config,
+  ts_ls = {},
   lua_ls = {},
   basedpyright = {},
 }
