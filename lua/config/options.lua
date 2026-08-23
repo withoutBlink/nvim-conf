@@ -61,6 +61,7 @@ vim.opt.foldlevel = 99
 
 -- Use vim native autocomplete
 vim.opt.autocomplete = true
+vim.opt.complete:append('o')
 vim.opt.completeopt = {
   "menu",
   "popup",
@@ -68,3 +69,4 @@ vim.opt.completeopt = {
 }
 vim.opt.pumheight = 9
 vim.opt.pumborder = "rounded"
+
