@@ -5,7 +5,8 @@ local M = {
     keys = false,
     opts = {
       formatters_by_ft = {
-        rust = {"rustfmt"}
+        rust = { "rustfmt" },
+        python = { "ruff_organize_imports", "ruff_format" }
       }
     }
   },
