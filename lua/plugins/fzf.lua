@@ -59,7 +59,7 @@ local fzf_keymaps = {
     function()
       require("fzf-lua").live_grep({ cwd = vim.fn.expand("%:p:h") })
     end,
-    desc = "Find Symbols(Currnet)",
+    desc = "Find Symbols(Current)",
     nowait = true,
   },
   {
