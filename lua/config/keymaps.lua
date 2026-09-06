@@ -60,8 +60,14 @@ keymap.set("n", "L", ":bn<CR>", opts_set_desc(default_opts, "Next Buffer"))
 keymap.set("n", "H", ":bp<CR>", opts_set_desc(default_opts, "Previous Buffer"))
 
 -- Explore
-keymap.set("n", "<leader>e", ":Explore<CR>", opts_set_desc(default_opts, "Explore"))
-keymap.set("n", "<leader>E", ":Explore .<CR>", opts_set_desc(default_opts, "Explore"))
+-- Open oil in the current file's directory
+vim.keymap.set("n", "<leader>e", function()
+  require("oil").open(vim.fn.expand("%:p:h"))
+end, { desc = "Open Oil Explorer(Current)" })
+-- Open oil in nvim cwd
+vim.keymap.set("n", "<leader>E", function()
+  require("oil").open(vim.fn.getcwd())
+end, { desc = "Open Oil Explorer(CWD)" })
 
 -- Buffers
 keymap.set("n", "<leader>bd", ":bp|bd #<CR>", opts_set_desc(default_opts, "Delete Buffer"))

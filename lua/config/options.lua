@@ -11,10 +11,6 @@ vim.g.autoformat = false
 -- Set auto warp lines
 vim.g.wrap = true
 
--- Set netrw with no banner
-vim.g.netrw_banner = false
-vim.g.netrw_liststyle = 3
-
 -- Set vim to use tabs
 -- vim.opt.tabstop = 4
 -- vim.opt.shiftwidth = 4
@@ -52,8 +48,7 @@ vim.opt.mouse = ""
 vim.opt.laststatus = 0
 
 -- Use system clipboard
--- DO NOT SET THIS, Wayland clipboard conflict with netrw
--- vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 -- Use indent for folding
 vim.opt.foldmethod = "indent"
