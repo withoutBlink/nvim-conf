@@ -59,8 +59,10 @@ vim.opt.autocomplete = true
 vim.opt.complete:append('o')
 vim.opt.completeopt = {
   "menu",
+  "menuone",
   "popup",
-  "noinsert"
+  "noinsert",
+  "noselect"
 }
 vim.opt.pumheight = 9
 vim.opt.pumborder = "rounded"
